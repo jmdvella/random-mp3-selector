@@ -1,6 +1,8 @@
 # random-mp3-selector
 Randomly select mp3 files from a directory tree of music for your phone or music player
 
-By default the source directory and target directory are my local directories, you will need to change this to your own.
+Enter the root directory for all music
 
-It also is set to 300 files, you will need to change this to how many files you require.
+Option to exlude a directory from selections
+
+Creates a directory called CollectedMusic on your desktop with randomly selected music
