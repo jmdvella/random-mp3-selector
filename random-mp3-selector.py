@@ -2,7 +2,6 @@ import os
 import shutil
 import random
 
-
 # source directory for files to copy from
 while True:
     source_dir = input('Type the directory of your music (or copy and paste):\n')
@@ -22,8 +21,10 @@ target_dir = os.path.expanduser('~\Desktop\\CollectedMusic')
 source_files = []  
 
 # exclude directories
-exclude_dir = input('\nEnter a directory that you would like to exclude.\n(press Enter if you wish to include all directories):\n')
-# give user option to select no directories to exclude
+exclude_dir = input('\nEnter a directory that you would like to exclude:\n(to add multiple directories use a comma example: Michael Jackson, Tina Turner etc)\n(press Enter if you wish to include all directories):\n')
+exclude_dir = exclude_dir.split(", ")
+
+# continue if no directory is selected
 if exclude_dir == '':
     exclude_dir = None
 
@@ -31,7 +32,7 @@ if exclude_dir == '':
 # select files that are not in excluded directory
 for dirpath, dirnames, filenames in os.walk(source_dir, topdown=True):
     try:
-        dirnames[:] = [d for d in dirnames if not d.startswith(exclude_dir)]
+        [dirnames.remove(d) for d in list(dirnames) if d in exclude_dir]
     except TypeError:
         continue
     # find file names that end with .mp3
