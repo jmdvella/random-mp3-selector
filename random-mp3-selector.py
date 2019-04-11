@@ -17,7 +17,7 @@ os.makedirs(os.path.expanduser('~\Desktop\\CollectedMusic'), exist_ok=True)
 # target directory for files to copy to
 target_dir = os.path.expanduser('~\Desktop\\CollectedMusic')
 
- # empty list for collecting files
+# empty list for collecting files
 source_files = []  
 
 # exclude directories
